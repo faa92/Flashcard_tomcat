@@ -9,7 +9,7 @@ public interface ICardRepository {
 
     void save(long idTheme, String question, String answer, boolean learned);
 
-    void updateIsLearned(long idCard, boolean learned);
+    boolean updateIsLearned(long idCard, boolean learned);
 
-    void remove(long idCard);
+    boolean remove(long idCard);
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ICardService {
     List<Card> getAllByTheme(long themeId);
-    void save(long themeId, String title);
+    void save(long themeId, String question, String answer, boolean learned);
     void updateLearned(long cardId, boolean learned);
     void remove(long cardId);
 }

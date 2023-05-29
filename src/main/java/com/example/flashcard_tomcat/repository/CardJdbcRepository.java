@@ -1,5 +1,6 @@
 package com.example.flashcard_tomcat.repository;
 
+import com.example.flashcard_tomcat.exception.RepositoryException;
 import com.example.flashcard_tomcat.model.Card;
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -45,7 +46,7 @@ public class CardJdbcRepository implements ICardRepository {
             return result;
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
     }
 
@@ -65,13 +66,13 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
 
     }
 
     @Override
-    public void updateIsLearned(long idCard, boolean learned) {
+    public boolean updateIsLearned(long idCard, boolean learned) {
         String sql = """
                 UPDATE card
                 SET learned = ?
@@ -85,13 +86,14 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
 
+        return learned;
     }
 
     @Override
-    public void remove(long idCard) {
+    public boolean remove(long idCard) {
         String sql = """
                 DELETE FROM  card
                 WHERE card_id = ?""";
@@ -103,7 +105,8 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
+        return false;
     }
 }
