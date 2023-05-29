@@ -40,12 +40,13 @@ public class CardServiceImpl implements ICardService{
     @Override
     public void remove(long cardId) {
         boolean existed = cardRepository.remove(cardId);
-        if (!existed){
+        if (!existed) {
             throw new BusinessException("Карты не существует");
         }
     }
-    private void validateThemeExist(long themeId){
-        if (themeRepository.existsById(themeId)){
+
+    private void validateThemeExist(long themeId) { //todo
+        if (themeRepository.existsById(themeId)) {
             throw new BusinessException("Темы не существует");
         }
     }

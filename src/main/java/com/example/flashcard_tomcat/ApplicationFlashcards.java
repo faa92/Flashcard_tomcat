@@ -4,6 +4,8 @@ import com.example.flashcard_tomcat.model.Card;
 import com.example.flashcard_tomcat.model.Theme;
 import com.example.flashcard_tomcat.repository.CardJdbcRepository;
 import com.example.flashcard_tomcat.repository.ThemeJdbcRepository;
+import com.example.flashcard_tomcat.service.CardServiceImpl;
+import com.example.flashcard_tomcat.service.ThemeServiceImpl;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
@@ -22,16 +24,12 @@ public class ApplicationFlashcards {
             ThemeJdbcRepository themeJdbcRepository = new ThemeJdbcRepository(hikariDataSource);
             CardJdbcRepository cardJdbcRepository = new CardJdbcRepository(hikariDataSource);
 
-            List<Theme> allThemes = themeJdbcRepository.getAllTheme();
-            List<Card> allCardsByTheme = cardJdbcRepository.findAllCardsByTheme(1);
+            ThemeServiceImpl themeService = new ThemeServiceImpl(themeJdbcRepository);
+            CardServiceImpl cardService = new CardServiceImpl(themeJdbcRepository, cardJdbcRepository);
 
+            List<Theme> allThemes = themeService.getAll();
+            List<Card> allCardsByTheme = cardService.getAllByTheme(3);
 
-//        themeJdbcRepository.save("History");
-//        themeJdbcRepository.remove(4);
-
-//        cardJdbcRepository.save(2, "FWFWFWF", "12345", true);
-//        cardJdbcRepository.remove(17);
-//        cardJdbcRepository.updateIsLearned(1, true);
 
             System.out.println(allThemes);
             System.out.println(allCardsByTheme);
