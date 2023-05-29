@@ -46,7 +46,7 @@ public class CardServiceImpl implements ICardService{
     }
 
     private void validateThemeExist(long themeId) { //todo
-        if (themeRepository.existsById(themeId)) {
+        if (!themeRepository.existsById(themeId)) {
             throw new BusinessException("Темы не существует");
         }
     }

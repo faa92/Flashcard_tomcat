@@ -28,8 +28,7 @@ public class ApplicationFlashcards {
             CardServiceImpl cardService = new CardServiceImpl(themeJdbcRepository, cardJdbcRepository);
 
             List<Theme> allThemes = themeService.getAll();
-            List<Card> allCardsByTheme = cardService.getAllByTheme(3);
-
+            List<Card> allCardsByTheme = cardService.getAllByTheme(1);
 
             System.out.println(allThemes);
             System.out.println(allCardsByTheme);
