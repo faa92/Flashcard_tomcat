@@ -22,8 +22,9 @@ public class ApplicationFlashcards {
             ThemeJdbcRepository themeJdbcRepository = new ThemeJdbcRepository(hikariDataSource);
             CardJdbcRepository cardJdbcRepository = new CardJdbcRepository(hikariDataSource);
 
-            List<Theme> allThemes = themeJdbcRepository.findThemeById(1);
+            List<Theme> allThemes = themeJdbcRepository.getAllTheme();
             List<Card> allCardsByTheme = cardJdbcRepository.findAllCardsByTheme(1);
+
 
 //        themeJdbcRepository.save("History");
 //        themeJdbcRepository.remove(4);

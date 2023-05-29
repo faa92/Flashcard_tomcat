@@ -18,6 +18,55 @@ public class ThemeJdbcRepository implements IThemeRepository {
     }
 
     @Override
+    public boolean existsById(long themeId) {
+        String sql = """
+                SELECT TRUE
+                FROM theme
+                WHERE theme.id = ?""";
+        try (
+                Connection connection = db.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+                ){
+            statement.setLong(1, themeId);
+            ResultSet resultSet = statement.executeQuery();
+            return resultSet.next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @Override
+    public List<Theme> getAllTheme() {
+        String sql = """
+                SELECT theme.id                                          AS id,
+                       theme.theme_title                                 AS title,
+                       count(card_id)                                    AS total_cards_count,
+                       count(card_id) FILTER (WHERE card.learned)        AS learned_cards_count
+                FROM theme
+                            LEFT JOIN card ON theme.id = card.theme_id
+                GROUP BY theme.id;""";
+        try (
+                Connection connection = db.getConnection();
+                PreparedStatement pStatement = connection.prepareStatement(sql);
+        ) {
+            ResultSet resultSet = pStatement.executeQuery();
+            List<Theme> result = new ArrayList<>();
+            while (resultSet.next()) {
+                result.add(new Theme(
+                        resultSet.getLong("id"),
+                        resultSet.getString("title"),
+                        resultSet.getLong("total_cards_count"),
+                        resultSet.getLong("learned_cards_count")
+                ));
+            }
+            return result;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @Override
     public List<Theme> findThemeById(long idTheme) {
         String sql = """
                 SELECT theme.id                                          AS id,
@@ -71,7 +120,7 @@ public class ThemeJdbcRepository implements IThemeRepository {
     }
 
     @Override
-    public void remove(long idTheme) {
+    public boolean remove(long idTheme) {
         String sql = """
                 DELETE FROM theme
                 WHERE id = ?""";
@@ -80,11 +129,10 @@ public class ThemeJdbcRepository implements IThemeRepository {
                 PreparedStatement pStatement = connection.prepareStatement(sql);
         ) {
             pStatement.setLong(1, idTheme);
-            pStatement.executeUpdate();
+            return pStatement.executeUpdate() == 1;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
