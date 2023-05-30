@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="fix" />
+    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,12 +85,13 @@
       <recent name="$PROJECT_DIR$/src/main/resources/db.migration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/todo" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat" />
       <recent name="$PROJECT_DIR$/src/main/resources/db.migration" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApplicationFlashcards">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.9">
     <configuration name="ApplicationFlashcards" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="FLASH_CARDS_PASSWORD" value="" />
@@ -106,10 +111,11 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10.1.9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.9" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Flashcard_tomcat:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Flashcard_tomcat_war_exploded" />
+            <option name="CONTEXT_PATH" value="/Flashcard" />
           </settings>
         </artifact>
       </deployment>
@@ -184,13 +190,13 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
         <EnvironmentVariables>
-          <option name="NAME" value="FLASH_CARDS_URL" />
-          <option name="VALUE" value="jdbc:postgresql://localhost:5432/postgres" />
+          <option name="NAME" value="FLASH_CARDS_PASSWORD" />
+          <option name="VALUE" value="" />
           <option name="IS_PREDEFINED" value="false" />
         </EnvironmentVariables>
         <EnvironmentVariables>
-          <option name="NAME" value="FLASH_CARDS_PASSWORD" />
-          <option name="VALUE" value="" />
+          <option name="NAME" value="FLASH_CARDS_URL" />
+          <option name="VALUE" value="jdbc:postgresql://localhost:5432/postgres" />
           <option name="IS_PREDEFINED" value="false" />
         </EnvironmentVariables>
         <EnvironmentVariables>
@@ -226,7 +232,8 @@
       <updated>1685292694039</updated>
       <workItem from="1685292695213" duration="11468000" />
       <workItem from="1685369153331" duration="2630000" />
-      <workItem from="1685373444441" duration="7611000" />
+      <workItem from="1685373444441" duration="7677000" />
+      <workItem from="1685453423704" duration="3844000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1685302264993</created>
@@ -270,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685395269205</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix">
+      <created>1685395283339</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685395283339</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
