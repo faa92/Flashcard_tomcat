@@ -9,10 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="fix">
+    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="add ThemeController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +232,7 @@
       <workItem from="1685292695213" duration="11468000" />
       <workItem from="1685369153331" duration="2630000" />
       <workItem from="1685373444441" duration="7677000" />
-      <workItem from="1685453423704" duration="3844000" />
+      <workItem from="1685453423704" duration="8580000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1685302264993</created>
@@ -284,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685395283339</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add FlashcardsWeb">
+      <created>1685460915579</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685460915579</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add ThemeController">
+      <created>1685465561914</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685465561914</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +321,9 @@
     <MESSAGE value="add card service" />
     <MESSAGE value="todo" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="add FlashcardsWeb" />
+    <MESSAGE value="add ThemeController" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ThemeController" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

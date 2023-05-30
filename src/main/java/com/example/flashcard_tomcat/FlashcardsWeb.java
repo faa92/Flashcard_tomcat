@@ -1,12 +1,12 @@
 package com.example.flashcard_tomcat;
 
 import com.example.flashcard_tomcat.repository.CardJdbcRepository;
-import com.example.flashcard_tomcat.repository.ICardRepository;
-import com.example.flashcard_tomcat.repository.IThemeRepository;
+import com.example.flashcard_tomcat.repository.CardRepository;
 import com.example.flashcard_tomcat.repository.ThemeJdbcRepository;
+import com.example.flashcard_tomcat.repository.ThemeRepository;
+import com.example.flashcard_tomcat.service.CardService;
 import com.example.flashcard_tomcat.service.CardServiceImpl;
-import com.example.flashcard_tomcat.service.ICardService;
-import com.example.flashcard_tomcat.service.IThemeService;
+import com.example.flashcard_tomcat.service.ThemeService;
 import com.example.flashcard_tomcat.service.ThemeServiceImpl;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -27,11 +27,11 @@ public class FlashcardsWeb implements ServletContextListener {
         hikariConfig.setDriverClassName("org.postgresql.Driver");
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 
-        IThemeRepository themeRepository = new ThemeJdbcRepository(dataSource);
-        ICardRepository cardRepository = new CardJdbcRepository(dataSource);
+        ThemeRepository themeRepository = new ThemeJdbcRepository(dataSource);
+        CardRepository cardRepository = new CardJdbcRepository(dataSource);
 
-        IThemeService themeService = new ThemeServiceImpl(themeRepository);
-        ICardService cardService = new CardServiceImpl(themeRepository, cardRepository);
+        ThemeService themeService = new ThemeServiceImpl(themeRepository);
+        CardService cardService = new CardServiceImpl(themeRepository, cardRepository);
 
         ServletContext context = event.getServletContext();
         context.setAttribute("dataSource", dataSource);

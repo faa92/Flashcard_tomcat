@@ -1,1 +1,0 @@
-package com.example.flashcard_tomcat.service;import com.example.flashcard_tomcat.model.Theme;import java.util.List;public interface IThemeService {    List<Theme> getAll();    void save(String title);    void remove(long themeId);}

@@ -2,17 +2,17 @@ package com.example.flashcard_tomcat.service;
 
 import com.example.flashcard_tomcat.exception.BusinessException;
 import com.example.flashcard_tomcat.model.Card;
-import com.example.flashcard_tomcat.repository.ICardRepository;
-import com.example.flashcard_tomcat.repository.IThemeRepository;
+import com.example.flashcard_tomcat.repository.CardRepository;
+import com.example.flashcard_tomcat.repository.ThemeRepository;
 
 import java.util.List;
 
-public class CardServiceImpl implements ICardService{
+public class CardServiceImpl implements CardService {
     private static final boolean DEFAULT_IS_LEARNED = false;
-    private final IThemeRepository themeRepository;
-    private final ICardRepository cardRepository;
+    private final ThemeRepository themeRepository;
+    private final CardRepository cardRepository;
 
-    public CardServiceImpl(IThemeRepository themeRepository, ICardRepository cardRepository) {
+    public CardServiceImpl(ThemeRepository themeRepository, CardRepository cardRepository) {
         this.themeRepository = themeRepository;
         this.cardRepository = cardRepository;
     }

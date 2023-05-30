@@ -2,19 +2,22 @@ package com.example.flashcard_tomcat.service;
 
 import com.example.flashcard_tomcat.exception.BusinessException;
 import com.example.flashcard_tomcat.model.Theme;
-import com.example.flashcard_tomcat.repository.IThemeRepository;
+import com.example.flashcard_tomcat.repository.ThemeRepository;
 
 import java.util.List;
 
-public class ThemeServiceImpl implements IThemeService{
-    private final IThemeRepository themeRepository;
-    public ThemeServiceImpl(IThemeRepository themeRepository) {
+public class ThemeServiceImpl implements ThemeService {
+    private final ThemeRepository themeRepository;
+
+    public ThemeServiceImpl(ThemeRepository themeRepository) {
         this.themeRepository = themeRepository;
     }
+
     @Override
     public List<Theme> getAll() {
         return themeRepository.getAllTheme();
     }
+
     @Override
     public void save(String title) {
         if (title.isEmpty()) {

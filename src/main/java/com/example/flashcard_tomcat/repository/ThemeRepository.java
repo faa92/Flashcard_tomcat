@@ -4,9 +4,11 @@ import com.example.flashcard_tomcat.model.Theme;
 
 import java.util.List;
 
-public interface IThemeRepository {
+public interface ThemeRepository {
     boolean existsById(long themeId);
+
     List<Theme> getAllTheme();
+
     List<Theme> findThemeById(long idTheme);
 
     void save(String title);

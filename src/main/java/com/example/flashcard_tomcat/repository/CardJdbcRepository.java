@@ -2,6 +2,7 @@ package com.example.flashcard_tomcat.repository;
 
 import com.example.flashcard_tomcat.exception.RepositoryException;
 import com.example.flashcard_tomcat.model.Card;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardJdbcRepository implements ICardRepository {
+public class CardJdbcRepository implements CardRepository {
     private final DataSource db;
 
     public CardJdbcRepository(DataSource db) {

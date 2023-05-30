@@ -1,7 +1,7 @@
 package com.example.flashcard_tomcat.controller;
 
 import com.example.flashcard_tomcat.model.Theme;
-import com.example.flashcard_tomcat.service.IThemeService;
+import com.example.flashcard_tomcat.service.ThemeService;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,12 +15,12 @@ import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = "/themes")
 public class ThemeController extends HttpServlet {
-    private IThemeService themeService;
+    private ThemeService themeService;
 
     @Override
     public void init() {
         ServletContext context = getServletContext();
-        themeService = (IThemeService) context.getAttribute("themeService");
+        themeService = (ThemeService) context.getAttribute("themeService");
     }
 
     @Override
