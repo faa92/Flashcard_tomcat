@@ -34,7 +34,7 @@ public class CardController extends HttpServlet {
                         card.getIdCard(),
                         card.getQuestion(),
                         card.getAnswer(),
-                        card.isLearned() ? "✅" : "⚪️️"
+                        card.isLearned() ? "✅" : "❌"
                 ))
                 .collect(Collectors.joining("\n"));
         response.setContentType("text/plain");
@@ -42,4 +42,5 @@ public class CardController extends HttpServlet {
         response.setStatus(HttpServletResponse.SC_OK);
         response.getWriter().println(responseBody);
     }
+
 }

@@ -21,9 +21,9 @@ public class FlashcardsWeb implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent event) {
         HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setJdbcUrl("FLASH_CARDS_URL");
-        hikariConfig.setUsername("FLASH_CARDS_USER");
-        hikariConfig.setPassword("FLASH_CARDS_PASSWORD");
+        hikariConfig.setJdbcUrl(System.getenv("FLASH_CARDS_URL"));
+        hikariConfig.setUsername(System.getenv("FLASH_CARDS_USER"));
+        hikariConfig.setPassword(System.getenv("FLASH_CARDS_PASSWORD"));
         hikariConfig.setDriverClassName("org.postgresql.Driver");
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
 
