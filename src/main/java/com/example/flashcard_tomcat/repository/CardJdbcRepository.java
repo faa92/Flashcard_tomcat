@@ -1,6 +1,8 @@
 package com.example.flashcard_tomcat.repository;
 
+import com.example.flashcard_tomcat.exception.RepositoryException;
 import com.example.flashcard_tomcat.model.Card;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,12 +10,51 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class CardJdbcRepository implements ICardRepository {
+public class CardJdbcRepository implements CardRepository {
     private final DataSource db;
 
     public CardJdbcRepository(DataSource db) {
         this.db = db;
+    }
+
+    @Override
+    public Optional<Card> findOneNotLearnedByThemeIdAndIdGreaterThen(long themeId, long greaterThanId) {
+        String sql = """
+                SELECT card.id          AS id,
+                       card.question    AS question,
+                       card.answer      AS answer,
+                       card.learned     AS learned
+                FROM card
+                WHERE card.theme_id = ?
+                  AND NOT card.learned
+                  AND card.id > ?
+                ORDER BY card.id
+                LIMIT 1
+                """;
+        try (
+                Connection connection = db.getConnection();
+                PreparedStatement pStatement = connection.prepareStatement(sql);
+        ) {
+            pStatement.setLong(1, themeId);
+            pStatement.setLong(2, greaterThanId);
+
+            ResultSet resultSet = pStatement.executeQuery();
+            if (resultSet.next()) {
+                Card card = new Card(
+                        resultSet.getLong("id"),
+                        resultSet.getString("question"),
+                        resultSet.getString("answer"),
+                        resultSet.getBoolean("learned")
+                );
+                return Optional.of(card);
+            } else {
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            throw new RepositoryException(e);
+        }
     }
 
     @Override
@@ -45,7 +86,7 @@ public class CardJdbcRepository implements ICardRepository {
             return result;
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
     }
 
@@ -65,13 +106,13 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
 
     }
 
     @Override
-    public void updateIsLearned(long idCard, boolean learned) {
+    public boolean updateIsLearned(long idCard, boolean learned) {
         String sql = """
                 UPDATE card
                 SET learned = ?
@@ -85,13 +126,14 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
 
+        return learned;
     }
 
     @Override
-    public void remove(long idCard) {
+    public boolean remove(long idCard) {
         String sql = """
                 DELETE FROM  card
                 WHERE card_id = ?""";
@@ -103,7 +145,8 @@ public class CardJdbcRepository implements ICardRepository {
             pStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RepositoryException(e);
         }
+        return false;
     }
 }

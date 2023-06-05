@@ -25,7 +25,7 @@ public class Theme {
         return totalCardsCount;
     }
 
-    public long getDoneCardsCount() {
+    public long getLearnedCardsCount() {
         return learnedCardsCount;
     }
 
