@@ -12,9 +12,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-
-@WebServlet(urlPatterns = "/themes")
+@WebServlet(urlPatterns = ThemeController.PATH)
 public class ThemeController extends HttpServlet {
+    public static final String PATH = "/themes";
     private ThemeService themeService;
 
     @Override
