@@ -24,7 +24,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void save(long themeId, String question, String answer) {
+    public void create(long themeId, String question, String answer) {
         if (question.isEmpty() || answer.isEmpty()) throw new BusinessException("Вопрос/Ответ не заполненны");
         else {
             validateThemeExist(themeId);
@@ -33,19 +33,21 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public void updateLearned(long cardId, boolean learned) {
+    public Card updateLearned(long cardId, boolean learned) {
         boolean existed = cardRepository.updateIsLearned(cardId, learned);
         if (!existed) {
             throw new BusinessException("Карты не существует");
         }
+        return null;
     }
 
     @Override
-    public void remove(long cardId) {
+    public Card remove(long cardId) {
         boolean existed = cardRepository.remove(cardId);
         if (!existed) {
             throw new BusinessException("Карты не существует");
         }
+        return null;
     }
 
     private void validateThemeExist(long themeId) {

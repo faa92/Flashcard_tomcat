@@ -13,9 +13,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet(urlPatterns = "/cards")
+import static com.example.flashcard_tomcat.controller.CardController.PATH;
+
+@WebServlet(urlPatterns = PATH)
 public class CardController extends HttpServlet {
 
+    public static final String PATH = "/cards";
     private CardService cardService;
 
     @Override

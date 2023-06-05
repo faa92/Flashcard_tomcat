@@ -7,9 +7,9 @@ import java.util.List;
 public interface CardService {
     List<Card> getAllByTheme(long themeId);
 
-    void save(long themeId, String question, String answer);
+    void create(long themeId, String question, String answer);
 
-    void updateLearned(long cardId, boolean learned);
+    Card updateLearned(long cardId, boolean learned);
 
-    void remove(long cardId);
+    Card remove(long cardId);
 }
