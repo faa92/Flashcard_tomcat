@@ -19,7 +19,6 @@ public class CardCreateController extends HttpServlet {
         ServletContext context = getServletContext();
         cardService = (CardService) context.getAttribute("cardService");
     }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long themeId = Long.parseLong(req.getParameter("themeId"));

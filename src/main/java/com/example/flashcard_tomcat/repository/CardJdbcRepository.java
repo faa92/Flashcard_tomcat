@@ -44,7 +44,7 @@ public class CardJdbcRepository implements CardRepository {
             if (resultSet.next()) {
                 Card card = new Card(
                         resultSet.getLong("id"),
-                        resultSet.getString("question"),
+                        themeId, resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")
                 );
@@ -78,6 +78,7 @@ public class CardJdbcRepository implements CardRepository {
             while (resultSet.next()) {
                 result.add(new Card(
                         resultSet.getLong("id"),
+                        resultSet.getLong("themeId"),
                         resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")

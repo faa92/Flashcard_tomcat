@@ -2,12 +2,19 @@ package com.example.flashcard_tomcat.model;
 
 public class Card {
     private final long idCard;
+    private final long themeId;
     private final String question;
     private final String answer;
     private boolean learned;
 
-    public Card(long idCard, String question, String answer, boolean learned) {
+    public long getThemeId() {
+        return themeId;
+    }
+
+    public Card(long idCard, long themeId, String question, String answer, boolean learned) {
+
         this.idCard = idCard;
+        this.themeId = themeId;
         this.question = question;
         this.answer = answer;
         this.learned = learned;
@@ -37,4 +44,5 @@ public class Card {
                 " Answer = " + answer +
                 " Learned = " + learned + "\n";
     }
+
 }

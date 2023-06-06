@@ -24,8 +24,8 @@ public class CardUpdateController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long cardId = Long.parseLong(req.getParameter("cardId"));
-        boolean learned = Boolean.parseBoolean(req.getParameter("true"));
+        boolean learned = Boolean.parseBoolean(req.getParameter("learned"));
         Card updateCard = cardService.updateLearned(cardId, learned);
-        resp.sendRedirect(req.getContextPath() + CardController.PATH);
+        resp.sendRedirect(req.getContextPath() + CardController.PATH + "?themeId" + updateCard.getThemeId());
     }
 }

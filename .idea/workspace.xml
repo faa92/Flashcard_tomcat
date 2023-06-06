@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="TrainingController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/ThemeCreateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/ThemeRemoveController.java" afterDir="false" />
+    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="add create/remove/update card controller">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardCreateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardCreateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardRemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardRemoveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTTP Request" />
       </list>
     </option>
   </component>
@@ -41,6 +46,8 @@
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/ws-requests.http" environment="test" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -55,29 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/antonfedoseev/IdeaProjects/Flashcard_tomcat/src/main/java/com/example/flashcard_tomcat&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/antonfedoseev/IdeaProjects/Flashcard_tomcat/src/main/java/com/example/flashcard_tomcat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;cassandra&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "cassandra",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.flashcard_tomcat" />
@@ -96,19 +103,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.9">
-    <configuration name="get-requests | GET request with a header" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" requestIdentifier="GET request with a header" runType="Run single request">
+    <configuration name="FC_get_post | Update card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="6" requestIdentifier="Update card" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests | GET request with environment variables (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" index="3" requestIdentifier="GET request with environment variables" runType="Run single request">
+    <configuration name="Fc_get | Get themes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" requestIdentifier="Get themes" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="get-requests | GET request with environment variables" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" index="3" requestIdentifier="GET request with environment variables" runType="Run single request">
+    <configuration name="Fc_get | Remove card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" index="7" requestIdentifier="Remove card" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" requestIdentifier="#1" runType="Run single request">
+    <configuration name="Fc_get | Update card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" index="6" requestIdentifier="Update card" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api_1 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" requestIdentifier="#1" runType="Run single request">
+    <configuration name="Fc_get | Update item" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" index="6" requestIdentifier="Update item" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 10.1.9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.9" ALTERNATIVE_JRE_ENABLED="false">
@@ -230,20 +237,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.rest-api_1 | #1" />
-      <item itemvalue="HTTP Request.get-requests | GET request with a header" />
-      <item itemvalue="HTTP Request.get-requests | GET request with environment variables" />
-      <item itemvalue="HTTP Request.get-requests | GET request with environment variables (1)" />
-      <item itemvalue="HTTP Request.rest-api | #1" />
+      <item itemvalue="HTTP Request.FC_get_post | Update card" />
+      <item itemvalue="HTTP Request.Fc_get | Get themes" />
+      <item itemvalue="HTTP Request.Fc_get | Remove card" />
+      <item itemvalue="HTTP Request.Fc_get | Update card" />
+      <item itemvalue="HTTP Request.Fc_get | Update item" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.9" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.rest-api_1 | #1" />
-        <item itemvalue="HTTP Request.get-requests | GET request with environment variables (1)" />
-        <item itemvalue="HTTP Request.get-requests | GET request with a header" />
-        <item itemvalue="HTTP Request.get-requests | GET request with environment variables" />
-        <item itemvalue="HTTP Request.rest-api | #1" />
+        <item itemvalue="HTTP Request.FC_get_post | Update card" />
+        <item itemvalue="HTTP Request.Fc_get | Get themes" />
+        <item itemvalue="HTTP Request.Fc_get | Remove card" />
+        <item itemvalue="HTTP Request.Fc_get | Update card" />
+        <item itemvalue="HTTP Request.Fc_get | Update item" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +267,7 @@
       <workItem from="1685373444441" duration="7677000" />
       <workItem from="1685453423704" duration="17717000" />
       <workItem from="1685708503789" duration="3793000" />
-      <workItem from="1685718256025" duration="18550000" />
+      <workItem from="1685718256025" duration="28007000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1685302264993</created>
@@ -339,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685903629171</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add create/remove theme controller">
+      <created>1685998670193</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685998670193</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add create/remove/update card controller">
+      <created>1686000372197</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686000372197</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,8 +400,25 @@
     <MESSAGE value="add ThemeController" />
     <MESSAGE value="add CardController, fix name" />
     <MESSAGE value="TrainingController" />
-    <option name="LAST_COMMIT_MESSAGE" value="TrainingController" />
+    <MESSAGE value="add create/remove theme controller" />
+    <MESSAGE value="add create/remove/update card controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="add create/remove/update card controller" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java</url>
+          <line>24</line>
+          <properties class="com.example.flashcard_tomcat.controller.CardUpdateController" method="doPost">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

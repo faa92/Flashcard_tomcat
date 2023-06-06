@@ -1,0 +1,36 @@
+### Get themes
+GET http://localhost:8080/flashcard/themes
+
+
+### Create theme
+POST http://localhost:8080/flashcard/create-theme
+Content-Type: application/x-www-form-urlencoded
+
+title=Немецкий
+
+### Remove theme
+POST http://localhost:8080/flashcard/remove-theme
+Content-Type: application/x-www-form-urlencoded
+
+themeId=6
+
+### Get cards
+GET http://localhost:8080/flashcard/cards?themeId=1
+
+### Create card
+POST http://localhost:8080/flashcard/create-card
+Content-Type: application/x-www-form-urlencoded
+
+themeId=2&question=10*10&answer=100
+
+### Update card
+POST http://localhost:8080/flashcard/update
+Content-Type: application/x-www-form-urlencoded
+
+cardId=10&learned=true
+
+### Remove card
+POST http://localhost:8080/flashcard/remove-card
+Content-Type: application/x-www-form-urlencoded
+
+cardId=18
