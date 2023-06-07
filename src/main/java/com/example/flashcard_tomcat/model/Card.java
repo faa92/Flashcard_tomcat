@@ -7,9 +7,6 @@ public class Card {
     private final String answer;
     private boolean learned;
 
-    public long getThemeId() {
-        return themeId;
-    }
 
     public Card(long idCard, long themeId, String question, String answer, boolean learned) {
 
@@ -22,6 +19,10 @@ public class Card {
 
     public long getIdCard() {
         return idCard;
+    }
+
+    public long getThemeId() {
+        return themeId;
     }
 
     public String getQuestion() {

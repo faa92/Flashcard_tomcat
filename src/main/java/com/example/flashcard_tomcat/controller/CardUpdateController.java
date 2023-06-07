@@ -26,6 +26,6 @@ public class CardUpdateController extends HttpServlet {
         long cardId = Long.parseLong(req.getParameter("cardId"));
         boolean learned = Boolean.parseBoolean(req.getParameter("learned"));
         Card updateCard = cardService.updateLearned(cardId, learned);
-        resp.sendRedirect(req.getContextPath() + CardController.PATH + "?themeId" + updateCard.getThemeId());
+        resp.sendRedirect(req.getContextPath() + CardController.PATH + "?themeId=" + updateCard.getThemeId());
     }
 }

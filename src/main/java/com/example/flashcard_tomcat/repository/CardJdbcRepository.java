@@ -150,4 +150,35 @@ public class CardJdbcRepository implements CardRepository {
         }
         return false;
     }
+
+    @Override
+    public Optional<Object> findById(long cardId) {
+        String sql = """
+                SELECT card.id              AS id,
+                       card.theme_id        AS theme_id,
+                       card.learned         AS learned,
+                       card.question        AS question,
+                       card.answer          AS answer,
+                       card.learned         AS learned
+                FROM card
+                WHERE card.id = ?""";
+        try (
+                Connection connection = db.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setLong(1, cardId);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(mapToItem(resultSet));
+            } else {
+                return Optional.empty();
+            }
+
+        } catch (SQLException e) {
+            throw new RepositoryException(e);
+        }
+    }
+        return Optional.empty();
 }
+

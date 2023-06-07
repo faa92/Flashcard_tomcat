@@ -38,7 +38,8 @@ public class CardServiceImpl implements CardService {
         if (!existed) {
             throw new BusinessException("Карты не существует");
         }
-        return null;
+        return cardRepository.findById(cardId).orElseThrow();
+        //todo
     }
 
     @Override
@@ -47,7 +48,7 @@ public class CardServiceImpl implements CardService {
         if (!existed) {
             throw new BusinessException("Карты не существует");
         }
-        return null;
+        return null;   //todo
     }
 
     private void validateThemeExist(long themeId) {
