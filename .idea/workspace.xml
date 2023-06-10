@@ -9,9 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="get/post fix card, cardRepo, create/update controller&#10;add http file">
+    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="todo">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardRemoveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardRemoveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/service/CardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/service/CardServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,30 +98,31 @@
       <recent name="$PROJECT_DIR$/src/main/resources/db.migration" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/todo" />
       <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/test/todo" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat" />
       <recent name="$PROJECT_DIR$/src/main/resources/db.migration" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.9">
+    <configuration name="FC_get_post | Create theme" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="2" requestIdentifier="Create theme" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="FC_get_post | Get cards" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="4" requestIdentifier="Get cards" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="FC_get_post | Get themes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" requestIdentifier="Get themes" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="FC_get_post | Update card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="6" requestIdentifier="Update card" runType="Run single request">
+    <configuration name="FC_get_post | Remove card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="7" requestIdentifier="Remove card" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="Fc_get | Get themes" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" requestIdentifier="Get themes" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="Fc_get | Remove card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" index="7" requestIdentifier="Remove card" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="Fc_get | Update card" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/Fc_get.http" index="6" requestIdentifier="Update card" runType="Run single request">
+    <configuration name="FC_get_post | Remove theme" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FC_get_post.http" index="3" requestIdentifier="Remove theme" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 10.1.9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.9" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="e5120d43-2c3f-47ef-9f26-65e539e05186" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -233,20 +241,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="HTTP Request.FC_get_post | Create theme" />
       <item itemvalue="HTTP Request.FC_get_post | Get themes" />
-      <item itemvalue="HTTP Request.FC_get_post | Update card" />
-      <item itemvalue="HTTP Request.Fc_get | Get themes" />
-      <item itemvalue="HTTP Request.Fc_get | Remove card" />
-      <item itemvalue="HTTP Request.Fc_get | Update card" />
+      <item itemvalue="HTTP Request.FC_get_post | Get cards" />
+      <item itemvalue="HTTP Request.FC_get_post | Remove card" />
+      <item itemvalue="HTTP Request.FC_get_post | Remove theme" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.9" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.FC_get_post | Update card" />
+        <item itemvalue="HTTP Request.FC_get_post | Get cards" />
+        <item itemvalue="HTTP Request.FC_get_post | Remove theme" />
+        <item itemvalue="HTTP Request.FC_get_post | Create theme" />
         <item itemvalue="HTTP Request.FC_get_post | Get themes" />
-        <item itemvalue="HTTP Request.Fc_get | Get themes" />
-        <item itemvalue="HTTP Request.Fc_get | Remove card" />
-        <item itemvalue="HTTP Request.Fc_get | Update card" />
+        <item itemvalue="HTTP Request.FC_get_post | Remove card" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +274,8 @@
       <workItem from="1685718256025" duration="28007000" />
       <workItem from="1686086151059" duration="718000" />
       <workItem from="1686086904481" duration="547000" />
-      <workItem from="1686148691621" duration="1143000" />
+      <workItem from="1686148691621" duration="2130000" />
+      <workItem from="1686153072784" duration="15529000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1685302264993</created>
@@ -366,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686086285918</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="todo">
+      <created>1686150822300</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686150822300</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +399,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="datd_change" />
                       </list>
                     </value>
                   </entry>
@@ -400,7 +416,6 @@
     <MESSAGE value="add service class" />
     <MESSAGE value="add exception/ add ThemeService&#10;change repository function getAll, exist" />
     <MESSAGE value="add card service" />
-    <MESSAGE value="todo" />
     <MESSAGE value="fix" />
     <MESSAGE value="add FlashcardsWeb" />
     <MESSAGE value="add ThemeController" />
@@ -409,7 +424,8 @@
     <MESSAGE value="add create/remove theme controller" />
     <MESSAGE value="add create/remove/update card controller" />
     <MESSAGE value="get/post fix card, cardRepo, create/update controller&#10;add http file" />
-    <option name="LAST_COMMIT_MESSAGE" value="get/post fix card, cardRepo, create/update controller&#10;add http file" />
+    <MESSAGE value="todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -423,7 +439,43 @@
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java</url>
+          <line>155</line>
+          <properties class="com.example.flashcard_tomcat.repository.CardJdbcRepository" method="findById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java</url>
+          <line>116</line>
+          <properties class="com.example.flashcard_tomcat.repository.CardJdbcRepository" method="updateIsLearned">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java</url>
+          <line>18</line>
+          <properties class="com.example.flashcard_tomcat.controller.CardUpdateController" method="init">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/service/CardServiceImpl.java</url>
+          <line>35</line>
+          <properties class="com.example.flashcard_tomcat.service.CardServiceImpl" method="updateLearned">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

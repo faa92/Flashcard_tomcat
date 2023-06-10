@@ -35,6 +35,7 @@ public class CardController extends HttpServlet {
         String responseBody = cards.isEmpty() ? "Нет карт" : cards.stream()
                 .map(card -> "%3s %s %s".formatted(
                         card.getIdCard(),
+                        card.getThemeId(),
                         card.getQuestion(),
                         card.getAnswer(),
                         card.isLearned() ? "✅" : "❌"

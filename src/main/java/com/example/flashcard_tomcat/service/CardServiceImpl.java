@@ -38,17 +38,15 @@ public class CardServiceImpl implements CardService {
         if (!existed) {
             throw new BusinessException("Карты не существует");
         }
-        return cardRepository.findById(cardId).orElseThrow();
-        //todo
+        return (Card) cardRepository.findById(cardId).orElseThrow();
     }
 
     @Override
     public Card remove(long cardId) {
-        boolean existed = cardRepository.remove(cardId);
-        if (!existed) {
-            throw new BusinessException("Карты не существует");
-        }
-        return null;   //todo
+        Card card = cardRepository.findById(cardId)
+                .orElseThrow(() -> new BusinessException("Карты не существует"));
+        cardRepository.remove(cardId);
+        return card;
     }
 
     private void validateThemeExist(long themeId) {

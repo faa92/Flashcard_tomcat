@@ -44,7 +44,8 @@ public class CardJdbcRepository implements CardRepository {
             if (resultSet.next()) {
                 Card card = new Card(
                         resultSet.getLong("id"),
-                        themeId, resultSet.getString("question"),
+                        resultSet.getLong("themeId"),
+                        resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")
                 );
@@ -78,7 +79,7 @@ public class CardJdbcRepository implements CardRepository {
             while (resultSet.next()) {
                 result.add(new Card(
                         resultSet.getLong("id"),
-                        resultSet.getLong("themeId"),
+                        resultSet.getLong("theme_id"),
                         resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")
@@ -152,16 +153,15 @@ public class CardJdbcRepository implements CardRepository {
     }
 
     @Override
-    public Optional<Object> findById(long cardId) {
+    public Optional<Card> findById(long cardId) {
         String sql = """
-                SELECT card.id              AS id,
-                       card.theme_id        AS theme_id,
-                       card.learned         AS learned,
-                       card.question        AS question,
-                       card.answer          AS answer,
-                       card.learned         AS learned
+                SELECT card_id              AS card_id,
+                       theme_id             AS theme_id,
+                       question             AS question,
+                       answer               AS answer,
+                       learned              AS learned
                 FROM card
-                WHERE card.id = ?""";
+                WHERE card_id = ?""";
         try (
                 Connection connection = db.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -170,7 +170,14 @@ public class CardJdbcRepository implements CardRepository {
 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                return Optional.of(mapToItem(resultSet));
+                return Optional.of(
+                        new Card(
+                                resultSet.getLong("card_id"),
+                                resultSet.getLong("theme_id"),
+                                resultSet.getString("question"),
+                                resultSet.getString("answer"),
+                                resultSet.getBoolean("learned"))
+                );
             } else {
                 return Optional.empty();
             }
@@ -179,6 +186,5 @@ public class CardJdbcRepository implements CardRepository {
             throw new RepositoryException(e);
         }
     }
-        return Optional.empty();
 }
 

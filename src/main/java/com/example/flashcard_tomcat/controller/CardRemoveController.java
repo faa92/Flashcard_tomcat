@@ -25,6 +25,6 @@ public class CardRemoveController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long cardId = Long.parseLong(req.getParameter("cardId"));
         Card removedCard = cardService.remove(cardId);
-        resp.sendRedirect(req.getContextPath() + CardController.PATH + "?themeId" + removedCard.getThemeId());
+        resp.sendRedirect(req.getContextPath() + CardController.PATH + "?themeId=" + removedCard.getThemeId());
     }
 }
