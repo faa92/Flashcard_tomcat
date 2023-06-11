@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/update")
+@WebServlet(urlPatterns = "/update-card")
 public class CardUpdateController extends HttpServlet {
     private CardService cardService;
 
