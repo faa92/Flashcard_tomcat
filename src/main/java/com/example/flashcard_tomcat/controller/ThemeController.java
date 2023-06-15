@@ -36,18 +36,3 @@ public class ThemeController extends HttpServlet {
     }
 }
 
-//        List<Theme> themes = themeService.getAll();
-//        String responseBody = themes.isEmpty() ? "Нет тем" : themes.stream()
-//                .map(theme -> "%3s %-20s %2s / %-2s".formatted(
-//                        theme.getIdTheme(),
-//                        theme.getTitle(),
-//                        theme.getLearnedCardsCount(),
-//                        theme.getTotalCardsCount()
-//                ))
-//                .collect(Collectors.joining("\n"));
-//
-//        response.setContentType("text/plain");
-//        response.setCharacterEncoding("utf-8");
-//        response.setStatus(HttpServletResponse.SC_OK);
-//        response.getWriter().println(responseBody);
-

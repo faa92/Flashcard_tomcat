@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="fix mistake&#10;add post update, remove">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/cards.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/themes.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/todo/pom.xml" afterDir="false" />
+    <list default="true" id="f9fd0fbf-779a-4737-9299-a01684db5b60" name="Changes" comment="add jsp&#10;change controllers">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/http-client.env.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/todo/src/main/java/com/goedu/todo/ToDoApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/todo/src/main/java/com/goedu/todo/controller/ToDoFolderController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/todo/src/main/java/com/goedu/todo/controller/ToDoFolderCreateController.java" afterDir="false" />
@@ -42,9 +38,9 @@
       <change afterPath="$PROJECT_DIR$/src/test/todo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/CardUpdateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/ThemeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/controller/ThemeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/ThemeJdbcRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/ThemeJdbcRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/cards.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/cards.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/themes.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/themes.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +57,7 @@
         <option value="Class" />
         <option value="HTTP Request" />
         <option value="Jsp File" />
+        <option value="HTTP Public Environment File" />
       </list>
     </option>
   </component>
@@ -302,7 +299,13 @@
       <workItem from="1686086904481" duration="547000" />
       <workItem from="1686148691621" duration="2130000" />
       <workItem from="1686153072784" duration="16517000" />
-      <workItem from="1686475300516" duration="11804000" />
+      <workItem from="1686475300516" duration="18503000" />
+      <workItem from="1686755272559" duration="452000" />
+      <workItem from="1686755758697" duration="8000" />
+      <workItem from="1686755769088" duration="4817000" />
+      <workItem from="1686849985181" duration="2697000" />
+      <workItem from="1686852756582" duration="2831000" />
+      <workItem from="1686855662929" duration="1628000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1685302264993</created>
@@ -416,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686431673428</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add jsp&#10;change controllers">
+      <created>1686495093228</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686495093228</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,30 +470,18 @@
     <MESSAGE value="get/post fix card, cardRepo, create/update controller&#10;add http file" />
     <MESSAGE value="todo" />
     <MESSAGE value="fix mistake&#10;add post update, remove" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix mistake&#10;add post update, remove" />
+    <MESSAGE value="add jsp&#10;change controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jsp&#10;change controllers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java</url>
-          <line>155</line>
-          <properties class="com.example.flashcard_tomcat.repository.CardJdbcRepository" method="findById">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/repository/CardJdbcRepository.java</url>
-          <line>116</line>
-          <properties class="com.example.flashcard_tomcat.repository.CardJdbcRepository" method="updateIsLearned">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="24" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/flashcard_tomcat/FlashcardsWeb.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

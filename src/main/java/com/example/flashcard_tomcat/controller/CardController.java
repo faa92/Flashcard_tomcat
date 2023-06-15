@@ -40,19 +40,3 @@ public class CardController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 }
-
-
-//        List<Card> cards = cardService.getAllByTheme(themeId);
-//        String responseBody = cards.isEmpty() ? "Нет карт" : cards.stream()
-//                .map(card -> "%3s %s %s".formatted(
-//                        card.getIdCard(),
-//                        card.getThemeId(),
-//                        card.getQuestion(),
-//                        card.getAnswer(),
-//                        card.isLearned() ? "✅" : "❌"
-//                ))
-//                .collect(Collectors.joining("\n"));
-//        response.setContentType("text/plain");
-//        response.setCharacterEncoding("utf-8");
-//        response.setStatus(HttpServletResponse.SC_OK);
-//        response.getWriter().println(responseBody);
