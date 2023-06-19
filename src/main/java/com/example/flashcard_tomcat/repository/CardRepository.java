@@ -16,4 +16,5 @@ public interface CardRepository {
 
     boolean remove(long idCard);
 
+    Optional<Card> findById(long cardId);
 }

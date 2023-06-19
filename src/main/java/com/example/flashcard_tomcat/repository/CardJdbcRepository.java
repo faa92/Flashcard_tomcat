@@ -44,6 +44,7 @@ public class CardJdbcRepository implements CardRepository {
             if (resultSet.next()) {
                 Card card = new Card(
                         resultSet.getLong("id"),
+                        resultSet.getLong("themeId"),
                         resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")
@@ -78,6 +79,7 @@ public class CardJdbcRepository implements CardRepository {
             while (resultSet.next()) {
                 result.add(new Card(
                         resultSet.getLong("id"),
+                        resultSet.getLong("theme_id"),
                         resultSet.getString("question"),
                         resultSet.getString("answer"),
                         resultSet.getBoolean("learned")
@@ -149,4 +151,40 @@ public class CardJdbcRepository implements CardRepository {
         }
         return false;
     }
+
+    @Override
+    public Optional<Card> findById(long cardId) {
+        String sql = """
+                SELECT card_id              AS card_id,
+                       theme_id             AS theme_id,
+                       question             AS question,
+                       answer               AS answer,
+                       learned              AS learned
+                FROM card
+                WHERE card_id = ?""";
+        try (
+                Connection connection = db.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setLong(1, cardId);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(
+                        new Card(
+                                resultSet.getLong("card_id"),
+                                resultSet.getLong("theme_id"),
+                                resultSet.getString("question"),
+                                resultSet.getString("answer"),
+                                resultSet.getBoolean("learned"))
+                );
+            } else {
+                return Optional.empty();
+            }
+
+        } catch (SQLException e) {
+            throw new RepositoryException(e);
+        }
+    }
 }
+

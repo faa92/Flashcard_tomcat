@@ -19,7 +19,7 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Override
-    public void save(String title) {
+    public void create(String title) {
         if (title.isEmpty()) {
             throw new BusinessException("Нет названия темы");
         }

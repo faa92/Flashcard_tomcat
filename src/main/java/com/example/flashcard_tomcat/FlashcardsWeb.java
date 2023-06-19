@@ -4,10 +4,7 @@ import com.example.flashcard_tomcat.repository.CardJdbcRepository;
 import com.example.flashcard_tomcat.repository.CardRepository;
 import com.example.flashcard_tomcat.repository.ThemeJdbcRepository;
 import com.example.flashcard_tomcat.repository.ThemeRepository;
-import com.example.flashcard_tomcat.service.CardService;
-import com.example.flashcard_tomcat.service.CardServiceImpl;
-import com.example.flashcard_tomcat.service.ThemeService;
-import com.example.flashcard_tomcat.service.ThemeServiceImpl;
+import com.example.flashcard_tomcat.service.*;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.servlet.ServletContext;
@@ -32,11 +29,13 @@ public class FlashcardsWeb implements ServletContextListener {
 
         ThemeService themeService = new ThemeServiceImpl(themeRepository);
         CardService cardService = new CardServiceImpl(themeRepository, cardRepository);
+        TrainingService trainingService = new TrainingServiceImpl(themeRepository, cardRepository);
 
         ServletContext context = event.getServletContext();
         context.setAttribute("dataSource", dataSource);
         context.setAttribute("themeService", themeService);
         context.setAttribute("cardService", cardService);
+        context.setAttribute("trainingService", trainingService);
     }
 
     @Override

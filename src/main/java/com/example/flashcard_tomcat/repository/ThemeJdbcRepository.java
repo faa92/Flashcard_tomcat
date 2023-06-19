@@ -22,7 +22,7 @@ public class ThemeJdbcRepository implements ThemeRepository {
         String sql = """
                 SELECT TRUE
                 FROM theme
-                WHERE theme.id = ?""";
+                WHERE theme.theme_id = ?""";
         try (
                 Connection connection = db.getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -37,13 +37,13 @@ public class ThemeJdbcRepository implements ThemeRepository {
     @Override
     public List<Theme> getAllTheme() {
         String sql = """
-                SELECT theme.id                                          AS id,
+                SELECT theme.theme_id                                    AS id,
                        theme.theme_title                                 AS title,
                        count(card_id)                                    AS total_cards_count,
                        count(card_id) FILTER (WHERE card.learned)        AS learned_cards_count
                 FROM theme
-                            LEFT JOIN card ON theme.id = card.theme_id
-                GROUP BY theme.id;""";
+                            LEFT JOIN card ON theme.theme_id = card.theme_id
+                GROUP BY theme.theme_id;""";
         try (
                 Connection connection = db.getConnection();
                 PreparedStatement pStatement = connection.prepareStatement(sql);
@@ -69,14 +69,14 @@ public class ThemeJdbcRepository implements ThemeRepository {
     @Override
     public List<Theme> findThemeById(long idTheme) {
         String sql = """
-                SELECT theme.id                                          AS id,
+                SELECT theme.theme_id                                          AS id,
                        theme.theme_title                                 AS title,
                        count(card_id)                                    AS total_cards_count,
                        count(card_id) FILTER (WHERE card.learned)        AS learned_cards_count
                 FROM theme
                             LEFT JOIN card ON theme.id = card.theme_id
                 WHERE theme.id = ?
-                GROUP BY theme.id;""";
+                GROUP BY theme.theme_id;""";
         try (
                 Connection connection = db.getConnection();
                 PreparedStatement pStatement = connection.prepareStatement(sql);
@@ -123,7 +123,7 @@ public class ThemeJdbcRepository implements ThemeRepository {
     public boolean remove(long idTheme) {
         String sql = """
                 DELETE FROM theme
-                WHERE id = ?""";
+                WHERE theme_id = ?""";
         try (
                 Connection connection = db.getConnection();
                 PreparedStatement pStatement = connection.prepareStatement(sql);
